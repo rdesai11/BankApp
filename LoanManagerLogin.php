@@ -3,7 +3,7 @@ include 'header.php';
 ?>
 
 
-<h1>Loan Manager Login</h1>
+<center><h1>Loan Manager Login</h1></center>
 
 <!-- Section: Design Block -->
 <section class=" text-center text-lg-start">
