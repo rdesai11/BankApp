@@ -53,7 +53,7 @@
                                     </form>
                                     <br>
                                     <br>
-                                    <p>Loan Manger use Login 2 button</p>
+                                    <p>Loan Manager use Login 2 button</p>
                                     <form action="#">
                                         <input type="submit" value="Login 2"
                                                style="border:none; background-color: #0d6efd; color: white; height:35px; border-radius:5px;" />
