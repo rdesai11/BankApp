@@ -3,7 +3,18 @@ include 'header.php';
 ?>
 
 
-<h1>ALEX PHOUMMALAYVANE</h1>
+<head>
+	<title>Centered Header Example</title>
+	<style>
+		h1 {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1 style="font-weight: 700;">Welcome Back</h1>
+</body>
+
 
 <!-- Section: Design Block -->
 <section class=" text-center text-lg-start">
