@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <p>Bank Manager use Login 1 button</p>
-                                    <form action="#">
+                                    <form action="BankLogin.php">
                                         <input type="submit" value="Login 1"
                                                style="border:none; background-color: #0d6efd; color: white; height:35px; border-radius:5px;" />
                                     </form>
@@ -87,7 +87,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Bank Manager use sign up 1 button</p>
+<!--                                    <p>Bank Manager use sign up 1 button</p>
                                     <form action="BankSignUp.php">
                                         <input type="submit" value="Sign Up 1"
                                                style="border:none; background-color: #0d6efd; color: white; height:35px; border-radius:5px;" />
@@ -98,12 +98,12 @@
                                     <form action="https://google.com">
                                         <input type="submit" value="Sign Up 2"
                                                style="border:none; background-color: #0d6efd; color: white; height:35px; border-radius:5px;" />
-                                    </form>
-                                    <br>
-                                    <br>
-                                    <p>Customer use sign up 3 button</p>
+                                    </form>-->
+<!--                                    <br>
+                                    <br>-->
+                                    <p>Customer use sign up button</p>
                                     <form action="https://google.com">
-                                        <input type="submit" value="Sign Up 3"
+                                        <input type="submit" value="Sign Up"
                                                style="border:none; background-color: #0d6efd; color: white; height:35px; border-radius:5px;" />
                                     </form>
                                 </div>
