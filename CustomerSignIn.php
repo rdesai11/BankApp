@@ -60,16 +60,16 @@ include 'header.php';
             <div class="row mb-4">
               <div class="col d-flex justify-content-center">
                 <!-- Checkbox -->
-                <div class="form-check">
+<!--                <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
                   <label class="form-check-label" for="form2Example31"> Remember me </label>
-                </div>
+                </div>-->
               </div>
 
-              <div class="col">
-                <!-- Simple link -->
+<!--              <div class="col">
+                 Simple link 
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot password?</a>
-              </div>
+              </div>-->
             </div>
 
             <!-- Submit button -->
