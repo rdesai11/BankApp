@@ -61,7 +61,7 @@
                                     <br>
                                     <br>
                                     <p>Customer use Login 3 button</p>
-                                    <form action="CustomerSignup.php">
+                                    <form action="CustomerSignIn.php">
                                         <input type="submit" value="Login 3"
                                                style="border:none; background-color: #0d6efd; color: white; height:35px; border-radius:5px;" />
                                     </form>
