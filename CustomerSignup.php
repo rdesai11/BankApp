@@ -68,7 +68,7 @@ include 'header.php';
 
               <div class="col">
                 <!-- Simple link -->
-                <a href="#!">Forgot password?</a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot password?</a>
               </div>
             </div>
 
