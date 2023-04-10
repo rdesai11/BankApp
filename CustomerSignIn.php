@@ -43,16 +43,16 @@ include 'header.php';
       <div class="col-lg-8">
         <div class="card-body py-5 px-md-5">
 
-          <form>
+            <form method = "post" action="CustomerLogin.php">
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form2Example1" class="form-control" />
-              <label class="form-label" for="form2Example1">Email address</label>
+              <input type="text" id="user" name="User" class="form-control" />
+              <label class="form-label" for="form2Example1">Username</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form2Example2" class="form-control" />
+              <input type="password" id="pass" name="Pass" class="form-control" />
               <label class="form-label" for="form2Example2">Password</label>
             </div>
 
@@ -73,7 +73,7 @@ include 'header.php';
             </div>
 
             <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
           </form>
 
