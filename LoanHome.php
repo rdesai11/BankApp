@@ -16,7 +16,7 @@ session_start();
 <div class="container-fluid">
   <div class="w3-container w3-blue">
     <div class="row">
-      <div class="col-sm-20 w3-center"><h1>Loan Manager Page</h1></div>
+      <div class="col-sm-20 w3-center"><h1>Loan Manage Page</h1></div>
     </div>
   </div> 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
