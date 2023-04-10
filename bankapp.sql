@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 20, 2023 at 04:25 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.4
+-- Host: localhost
+-- Generation Time: Mar 26, 2023 at 09:09 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bankmanager`
+-- Table structure for table `Bank`
 --
 
-CREATE TABLE `bankmanager` (
+CREATE TABLE `Bank` (
   `BankID` int(5) NOT NULL,
   `RoutingNum` int(10) NOT NULL,
   `BankName` varchar(30) NOT NULL,
@@ -39,10 +38,10 @@ CREATE TABLE `bankmanager` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `checkingaccount`
+-- Table structure for table `CheckingAccount`
 --
 
-CREATE TABLE `checkingaccount` (
+CREATE TABLE `CheckingAccount` (
   `CheckingID` int(5) NOT NULL,
   `AccNum` int(10) NOT NULL,
   `Balance` int(20) NOT NULL,
@@ -53,10 +52,10 @@ CREATE TABLE `checkingaccount` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `creditcard`
+-- Table structure for table `CreditCard`
 --
 
-CREATE TABLE `creditcard` (
+CREATE TABLE `CreditCard` (
   `CreditCardID` int(5) NOT NULL,
   `CreditCardNum` int(16) NOT NULL,
   `CVV` int(3) NOT NULL,
@@ -68,10 +67,10 @@ CREATE TABLE `creditcard` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Table structure for table `Customer`
 --
 
-CREATE TABLE `customer` (
+CREATE TABLE `Customer` (
   `CustomerID` int(5) NOT NULL,
   `Name` varchar(30) NOT NULL,
   `User` varchar(20) NOT NULL,
@@ -85,10 +84,10 @@ CREATE TABLE `customer` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `debitcard`
+-- Table structure for table `DebitCard`
 --
 
-CREATE TABLE `debitcard` (
+CREATE TABLE `DebitCard` (
   `DebitCardID` int(5) NOT NULL,
   `DebitCardNum` int(16) NOT NULL,
   `CVV` int(3) NOT NULL,
@@ -101,10 +100,10 @@ CREATE TABLE `debitcard` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `deposit`
+-- Table structure for table `Deposit`
 --
 
-CREATE TABLE `deposit` (
+CREATE TABLE `Deposit` (
   `DepositID` int(5) NOT NULL,
   `DepositAmt` int(10) NOT NULL,
   `CheckingID` int(5) NOT NULL,
@@ -114,25 +113,24 @@ CREATE TABLE `deposit` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `loanapp`
+-- Table structure for table `LoanApp`
 --
 
-CREATE TABLE `loanapp` (
+CREATE TABLE `LoanApp` (
   `LoanAppID` int(5) NOT NULL,
   `LoanNum` int(10) NOT NULL,
   `LoanAmount` int(10) NOT NULL,
   `LoanType` varchar(25) NOT NULL,
-  `CustomerID` int(5) NOT NULL,
-  `LoanManID` int(5) NOT NULL
+  `CustomerID` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `loanmanager`
+-- Table structure for table `LoanManager`
 --
 
-CREATE TABLE `loanmanager` (
+CREATE TABLE `LoanManager` (
   `LoanManID` int(5) NOT NULL,
   `EmployeeID` int(10) NOT NULL,
   `Name` varchar(30) NOT NULL,
@@ -146,10 +144,10 @@ CREATE TABLE `loanmanager` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `savingsaccount`
+-- Table structure for table `SavingsAccount`
 --
 
-CREATE TABLE `savingsaccount` (
+CREATE TABLE `SavingsAccount` (
   `SavingsID` int(5) NOT NULL,
   `AccNum` int(10) NOT NULL,
   `Balance` int(20) NOT NULL,
@@ -161,10 +159,10 @@ CREATE TABLE `savingsaccount` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `withdraw`
+-- Table structure for table `Withdraw`
 --
 
-CREATE TABLE `withdraw` (
+CREATE TABLE `Withdraw` (
   `WithdrawID` int(5) NOT NULL,
   `WithdrawAmt` int(10) NOT NULL,
   `CheckingID` int(5) NOT NULL,
@@ -176,74 +174,82 @@ CREATE TABLE `withdraw` (
 --
 
 --
--- Indexes for table `bankmanager`
+-- Indexes for table `Bank`
 --
-ALTER TABLE `bankmanager`
-  ADD PRIMARY KEY (`BankID`);
+ALTER TABLE `Bank`
+  ADD PRIMARY KEY (`BankID`),
+  ADD UNIQUE KEY `BankUser` (`BankUser`),
+  ADD UNIQUE KEY `RoutingNum` (`RoutingNum`);
 
 --
--- Indexes for table `checkingaccount`
+-- Indexes for table `CheckingAccount`
 --
-ALTER TABLE `checkingaccount`
+ALTER TABLE `CheckingAccount`
   ADD PRIMARY KEY (`CheckingID`),
+  ADD UNIQUE KEY `AccNum` (`AccNum`),
   ADD KEY `CustomerID` (`CustomerID`),
   ADD KEY `BankID` (`BankID`);
 
 --
--- Indexes for table `creditcard`
+-- Indexes for table `CreditCard`
 --
-ALTER TABLE `creditcard`
+ALTER TABLE `CreditCard`
   ADD PRIMARY KEY (`CreditCardID`),
+  ADD UNIQUE KEY `CreditCardNum` (`CreditCardNum`),
   ADD KEY `CustomerID` (`CustomerID`);
 
 --
--- Indexes for table `customer`
+-- Indexes for table `Customer`
 --
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`CustomerID`);
+ALTER TABLE `Customer`
+  ADD PRIMARY KEY (`CustomerID`),
+  ADD UNIQUE KEY `User` (`User`);
 
 --
--- Indexes for table `debitcard`
+-- Indexes for table `DebitCard`
 --
-ALTER TABLE `debitcard`
+ALTER TABLE `DebitCard`
   ADD PRIMARY KEY (`DebitCardID`),
+  ADD UNIQUE KEY `DebitCardNum` (`DebitCardNum`),
   ADD KEY `CheckingID` (`CheckingID`),
   ADD KEY `CustomerID` (`CustomerID`);
 
 --
--- Indexes for table `deposit`
+-- Indexes for table `Deposit`
 --
-ALTER TABLE `deposit`
+ALTER TABLE `Deposit`
   ADD PRIMARY KEY (`DepositID`),
   ADD KEY `SavingsID` (`SavingsID`),
   ADD KEY `CheckingID` (`CheckingID`);
 
 --
--- Indexes for table `loanapp`
+-- Indexes for table `LoanApp`
 --
-ALTER TABLE `loanapp`
+ALTER TABLE `LoanApp`
   ADD PRIMARY KEY (`LoanAppID`),
-  ADD KEY `CustomerID` (`CustomerID`),
-  ADD KEY `LoanManID` (`LoanManID`);
+  ADD UNIQUE KEY `LoanNum` (`LoanNum`),
+  ADD KEY `CustomerID` (`CustomerID`);
 
 --
--- Indexes for table `loanmanager`
+-- Indexes for table `LoanManager`
 --
-ALTER TABLE `loanmanager`
-  ADD PRIMARY KEY (`LoanManID`);
+ALTER TABLE `LoanManager`
+  ADD PRIMARY KEY (`LoanManID`),
+  ADD UNIQUE KEY `User` (`User`);
 
 --
--- Indexes for table `savingsaccount`
+-- Indexes for table `SavingsAccount`
 --
-ALTER TABLE `savingsaccount`
+ALTER TABLE `SavingsAccount`
   ADD PRIMARY KEY (`SavingsID`),
+  ADD UNIQUE KEY `AccNum` (`AccNum`),
   ADD KEY `BankID` (`BankID`),
   ADD KEY `CustomerID` (`CustomerID`);
 
 --
--- Indexes for table `withdraw`
+-- Indexes for table `Withdraw`
 --
-ALTER TABLE `withdraw`
+ALTER TABLE `Withdraw`
   ADD PRIMARY KEY (`WithdrawID`),
   ADD KEY `CheckingID` (`CheckingID`),
   ADD KEY `SavingsID` (`SavingsID`);
@@ -253,63 +259,63 @@ ALTER TABLE `withdraw`
 --
 
 --
--- AUTO_INCREMENT for table `bankmanager`
+-- AUTO_INCREMENT for table `Bank`
 --
-ALTER TABLE `bankmanager`
+ALTER TABLE `Bank`
   MODIFY `BankID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `checkingaccount`
+-- AUTO_INCREMENT for table `CheckingAccount`
 --
-ALTER TABLE `checkingaccount`
+ALTER TABLE `CheckingAccount`
   MODIFY `CheckingID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `creditcard`
+-- AUTO_INCREMENT for table `CreditCard`
 --
-ALTER TABLE `creditcard`
+ALTER TABLE `CreditCard`
   MODIFY `CreditCardID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `customer`
+-- AUTO_INCREMENT for table `Customer`
 --
-ALTER TABLE `customer`
+ALTER TABLE `Customer`
   MODIFY `CustomerID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `debitcard`
+-- AUTO_INCREMENT for table `DebitCard`
 --
-ALTER TABLE `debitcard`
+ALTER TABLE `DebitCard`
   MODIFY `DebitCardID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `deposit`
+-- AUTO_INCREMENT for table `Deposit`
 --
-ALTER TABLE `deposit`
+ALTER TABLE `Deposit`
   MODIFY `DepositID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `loanapp`
+-- AUTO_INCREMENT for table `LoanApp`
 --
-ALTER TABLE `loanapp`
+ALTER TABLE `LoanApp`
   MODIFY `LoanAppID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `loanmanager`
+-- AUTO_INCREMENT for table `LoanManager`
 --
-ALTER TABLE `loanmanager`
+ALTER TABLE `LoanManager`
   MODIFY `LoanManID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `savingsaccount`
+-- AUTO_INCREMENT for table `SavingsAccount`
 --
-ALTER TABLE `savingsaccount`
+ALTER TABLE `SavingsAccount`
   MODIFY `SavingsID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `withdraw`
+-- AUTO_INCREMENT for table `Withdraw`
 --
-ALTER TABLE `withdraw`
+ALTER TABLE `Withdraw`
   MODIFY `WithdrawID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
@@ -317,52 +323,51 @@ ALTER TABLE `withdraw`
 --
 
 --
--- Constraints for table `checkingaccount`
+-- Constraints for table `CheckingAccount`
 --
-ALTER TABLE `checkingaccount`
-  ADD CONSTRAINT `checkingaccount_ibfk_1` FOREIGN KEY (`BankID`) REFERENCES `bankmanager` (`BankID`),
-  ADD CONSTRAINT `checkingaccount_ibfk_2` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`CustomerID`);
+ALTER TABLE `CheckingAccount`
+  ADD CONSTRAINT `checkingaccount_ibfk_1` FOREIGN KEY (`BankID`) REFERENCES `Bank` (`BankID`),
+  ADD CONSTRAINT `checkingaccount_ibfk_2` FOREIGN KEY (`CustomerID`) REFERENCES `Customer` (`CustomerID`);
 
 --
--- Constraints for table `creditcard`
+-- Constraints for table `CreditCard`
 --
-ALTER TABLE `creditcard`
-  ADD CONSTRAINT `creditcard_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`CustomerID`);
+ALTER TABLE `CreditCard`
+  ADD CONSTRAINT `creditcard_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `Customer` (`CustomerID`);
 
 --
--- Constraints for table `debitcard`
+-- Constraints for table `DebitCard`
 --
-ALTER TABLE `debitcard`
-  ADD CONSTRAINT `debitcard_ibfk_1` FOREIGN KEY (`CheckingID`) REFERENCES `checkingaccount` (`CheckingID`),
-  ADD CONSTRAINT `debitcard_ibfk_2` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`CustomerID`);
+ALTER TABLE `DebitCard`
+  ADD CONSTRAINT `debitcard_ibfk_1` FOREIGN KEY (`CheckingID`) REFERENCES `CheckingAccount` (`CheckingID`),
+  ADD CONSTRAINT `debitcard_ibfk_2` FOREIGN KEY (`CustomerID`) REFERENCES `Customer` (`CustomerID`);
 
 --
--- Constraints for table `deposit`
+-- Constraints for table `Deposit`
 --
-ALTER TABLE `deposit`
-  ADD CONSTRAINT `deposit_ibfk_1` FOREIGN KEY (`CheckingID`) REFERENCES `checkingaccount` (`CheckingID`),
-  ADD CONSTRAINT `deposit_ibfk_2` FOREIGN KEY (`SavingsID`) REFERENCES `savingsaccount` (`SavingsID`);
+ALTER TABLE `Deposit`
+  ADD CONSTRAINT `deposit_ibfk_1` FOREIGN KEY (`CheckingID`) REFERENCES `CheckingAccount` (`CheckingID`),
+  ADD CONSTRAINT `deposit_ibfk_2` FOREIGN KEY (`SavingsID`) REFERENCES `SavingsAccount` (`SavingsID`);
 
 --
--- Constraints for table `loanapp`
+-- Constraints for table `LoanApp`
 --
-ALTER TABLE `loanapp`
-  ADD CONSTRAINT `loanapp_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`CustomerID`),
-  ADD CONSTRAINT `loanapp_ibfk_2` FOREIGN KEY (`LoanManID`) REFERENCES `loanmanager` (`LoanManID`);
+ALTER TABLE `LoanApp`
+  ADD CONSTRAINT `loanapp_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `Customer` (`CustomerID`);
 
 --
--- Constraints for table `savingsaccount`
+-- Constraints for table `SavingsAccount`
 --
-ALTER TABLE `savingsaccount`
-  ADD CONSTRAINT `savingsaccount_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`CustomerID`),
-  ADD CONSTRAINT `savingsaccount_ibfk_2` FOREIGN KEY (`BankID`) REFERENCES `bankmanager` (`BankID`);
+ALTER TABLE `SavingsAccount`
+  ADD CONSTRAINT `savingsaccount_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `Customer` (`CustomerID`),
+  ADD CONSTRAINT `savingsaccount_ibfk_2` FOREIGN KEY (`BankID`) REFERENCES `Bank` (`BankID`);
 
 --
--- Constraints for table `withdraw`
+-- Constraints for table `Withdraw`
 --
-ALTER TABLE `withdraw`
-  ADD CONSTRAINT `withdraw_ibfk_1` FOREIGN KEY (`SavingsID`) REFERENCES `savingsaccount` (`SavingsID`),
-  ADD CONSTRAINT `withdraw_ibfk_2` FOREIGN KEY (`CheckingID`) REFERENCES `checkingaccount` (`CheckingID`);
+ALTER TABLE `Withdraw`
+  ADD CONSTRAINT `withdraw_ibfk_1` FOREIGN KEY (`SavingsID`) REFERENCES `SavingsAccount` (`SavingsID`),
+  ADD CONSTRAINT `withdraw_ibfk_2` FOREIGN KEY (`CheckingID`) REFERENCES `CheckingAccount` (`CheckingID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

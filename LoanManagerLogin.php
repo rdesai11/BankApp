@@ -2,69 +2,59 @@
 include 'header.php';
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
-<center><h1>Loan Manager Login</h1></center>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+        <title>LoanLogin</title>
+    </head>
 
-<!-- Section: Design Block -->
-<section class=" text-center text-lg-start">
-  <style>
-    .rounded-t-5 {
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-    }
+    <section class="vh-100" style="background-color: #0000FF;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="card" style="border-radius: 2px;">
+                    <div class="row g-0">
+                        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                           <!--Image Link: https://unsplash.com/photos/lmFJOx7hPc4-->
+                            <img src="loanloginimage.jpg" style="width:600px; height: 415px;" alt="image"/>
+                        </div>
+                        <div class="col-lg-5 d-flex align-items-center">
+                            <div class="card-body p-lg-5">
 
-    @media (min-width: 992px) {
-      .rounded-tr-lg-0 {
-        border-top-right-radius: 0;
-      }
+                                <form method="post" action="LoanLoginAction.php">
+                                    <div class="mb-3 pb-1">
+                                        <h1>Loan Login</h1>
+                                    </div>
 
-      .rounded-bl-lg-5 {
-        border-bottom-left-radius: 0.5rem;
-      }
-    }
-  </style>
-  <div class="card mb-3">
-    <div class="row g-0 d-flex align-items-center">
-      <div class="col-lg-4 d-none d-lg-flex">
-        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Trendy Pants and Shoes"
-          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
-      </div>
-      <div class="col-lg-8">
-        <div class="card-body py-5 px-md-5">
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Login for loan manager</h5>
 
-          <form>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form2Example1" class="form-control" />
-              <label class="form-label" for="form2Example1">Username</label>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="loanuser" name="loanuser" class="form-control form-control-lg"/>
+                                        <label class="form-label" for="loanuser">Username</label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="loanpassword" name="loanpassword" class="form-control form-control-lg" />
+                                        <label class="form-label" for="loanpassword">Password</label>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example2" class="form-control" />
-              <label class="form-label" for="form2Example2">Password</label>
-            </div>
-
-            <!-- 2 column grid layout for inline styling -->
-            <div class="row mb-4">
-              <div class="col d-flex justify-content-center">
-              
-
-              <div class="col">
-                <!-- Simple link -->
-                <a href="#!">Forgot password?</a>
-              </div>
-            </div>
-
-            <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4">Login</button>
-
-          </form>
-
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
