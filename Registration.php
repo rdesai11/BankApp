@@ -13,21 +13,37 @@
     // When form is submit, INSERT values into the database.
     if (isset($_REQUEST['User'])) {
         // removes backslashes
-        $username = stripslashes($_REQUEST['User']);
+        $User = stripslashes($_REQUEST['User']);
         //escapes special characters in a string
-        $username = mysqli_real_escape_string($con, $username);
-        $email    = stripslashes($_REQUEST['Email']);
-        $email    = mysqli_real_escape_string($con, $email);
-        $password = stripslashes($_REQUEST['Pass']);
-        $password = mysqli_real_escape_string($con, $password);
+        $User = mysqli_real_escape_string($conn, $User);
+        $Email    = stripslashes($_REQUEST['Email']);
+        $Email    = mysqli_real_escape_string($conn, $Email);
+        $Pass = stripslashes($_REQUEST['Pass']);
+        $Pass = mysqli_real_escape_string($conn, $Pass);
    
-        $query    = "INSERT into `customer` (User, Pass, Email)
-                     VALUES ('$username', '" . md5($password) . "', '$email')";
-        $result   = mysqli_query($con, $query);
+        $Name = stripslashes($_REQUEST['Name']);
+        $Name = mysqli_real_escape_string($conn, $Name);
+        
+        $Phone = $_REQUEST['Phone'];
+        $Phone = mysqli_real_escape_string($conn, $Phone);
+        
+        $Address = stripslashes($_REQUEST['Address']);
+        $Address = mysqli_real_escape_string($conn, $Address);
+        
+        $GovIDNum = $_REQUEST['GovIDNum'];
+        $GovIDNum = mysqli_real_escape_string($conn, $GovIDNum);
+        
+        
+        
+          $query    = "INSERT INTO `customer` (CustomerID, Name, User, Pass, Email, Phone, Address, GovIDNum) 
+                       VALUES (NULL, '$Name', '$User', '$Pass', '$Email', '$Phone', '$Address', '$GovIDNum')";
+//        $query    = "INSERT into `customer` (CustomerID, Name, User, Pass, Email, Phone, Address, GovIDNum)
+//                     VALUES ('$Name', '$User', '" . md5($Pass) . "', '$Email', '$Phone', '$Address', '$GovIDNum')";
+        $result   = mysqli_query($conn, $query);
         if ($result) {
             echo "<div class='form'>
                   <h3>You are registered successfully.</h3><br/>
-                  <p class='link'>Click here to <a href='login.php'>Login</a></p>
+                  <p class='link'>Click here to <a href='CustomerSignIn.php'>Login</a></p>
                   </div>";
         } else {
             echo "<div class='form'>
@@ -39,13 +55,13 @@
 ?>
     <form class="form" action="" method="post">
         <h1 class="login-title">Registration</h1>
-        <input type="text" class="login-input" name="name" placeholder="Name" required />
-        <input type="text" class="login-input" name="user" placeholder="Username" required />
-        <input type="text" class="login-input" name="phone" placeholder="Phone Number" required />
-        <input type="text" class="login-input" name="address" placeholder="Address" required />
-        <input type="text" class="login-input" name="email" placeholder="Email Address" required />
-        <input type="text" class="login-input" name="GovIDNum" placeholder="Government ID Number" required />
-        <input type="password" class="login-input" name="password" placeholder="Password" required />
+        <input type="text" class="login-input" name="Name" placeholder="Name" required />
+        <input type="text" class="login-input" name="User" placeholder="Username" required />
+        <input type="number" class="login-input" name="Phone" placeholder="Phone Number" required />
+        <input type="text" class="login-input" name="Address" placeholder="Address" required />
+        <input type="text" class="login-input" name="Email" placeholder="Email Address" required />
+        <input type="number" class="login-input" name="GovIDNum" placeholder="Government ID Number" required />
+        <input type="password" class="login-input" name="Pass" placeholder="Password" required />
         <input type="submit" name="submit" value="Register" class="login-button">
         <p class="link"><a href="CustomerSignIn.php">Click to Login</a></p>
     </form>
