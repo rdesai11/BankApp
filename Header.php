@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <p>Customer use sign up button</p>
-                                    <form action="https://google.com">
+                                    <form action="registration.php">
                                         <input type="submit" value="Sign Up"
                                                style="border:none; background-color: #0d6efd; color: white; height:35px; border-radius:5px;" />
                                     </form>
