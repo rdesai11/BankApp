@@ -15,14 +15,14 @@ include 'header.php';
         <title>BankLogin</title>
     </head>
 
-    <section class="vh-100" style="background-color: #90EE90;">
+    <section class="vh-100" style="background-color: #6B7A8F;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="card" style="border-radius: 2px;">
                     <div class="row g-0">
                         <div class="col-md-6 d-flex align-items-center justify-content-center">
                            <!--Image Link: https://unsplash.com/photos/lmFJOx7hPc4-->
-                            <img src="banklogin.jpg" style="width:600px; height: 415px;" alt="image"/>
+                            <img src="BankLockLogin.png" style="width:450px; height: 415px;" alt="image"/>
                         </div>
                         <div class="col-lg-5 d-flex align-items-center">
                             <div class="card-body p-lg-5">
@@ -42,13 +42,11 @@ include 'header.php';
                                     <div class="form-outline mb-4">
                                         <input type="password" id="bankpassword" name="bankpassword" class="form-control form-control-lg" />
                                         <label class="form-label" for="bankpassword">Password</label>
-                                    </div>
-
+                                    </div>                              
                                     <div class="mb-4">
                                         <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,9 @@ session_start();
 $uname = $_POST['bankuser'];
 $pass = $_POST['bankpassword'];
 
+// test for sql injection
+// " or ""="
+// " or ""="
 if (isset($_POST['bankuser']) && isset($_POST['bankpassword'])) {
 
     $sql = "SELECT * FROM BankManager WHERE BankUser='$uname' AND BankPass='$pass'";
