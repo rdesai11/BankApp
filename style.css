@@ -51,3 +51,53 @@ h3 {
     text-align: center;
 }
 
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.card {
+	background-color: #f2f2f2;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	padding: 20px;
+	margin: 20px;
+	text-align: center;
+}
+
+.card h2 {
+	margin-top: 0;
+}
+
+.card button {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+	background-color: #3e8e41;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+
+
+
+
+
+
+
+

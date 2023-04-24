@@ -21,11 +21,12 @@ if (isset($_POST['loanuser']) && isset($_POST['loanpassword'])) {
             header("Location: LoanHome.php?");
             exit();
         } else {
-            header("Location: index.php?error=Incorect User name or password");
+            header("Location: error.php?error=Incorect User name or password");
             exit();
         }
     } else {
-        header("Location: index.php?error=Wrong username or password");
+        header("Location: error.php?error=Wrong username or password");
+        
         exit();
     }
 } else {
