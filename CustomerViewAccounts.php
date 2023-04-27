@@ -3,7 +3,7 @@ require 'DBConnect.php';
 session_start();
 
 if(!isset($_SESSION['User'])){
-   header("Location:BankLogin.php");
+   header("Location:CustomerSignIn.php");
 }
 ?>
 
@@ -18,9 +18,11 @@ if(!isset($_SESSION['User'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+
+<!--  Navbar --> 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">XYZ Bank</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -49,10 +51,92 @@ if(!isset($_SESSION['User'])){
       </ul>
     </div>
   </div>
+    <form class="d-flex" action="BankLogoutAction.php" method="post">
+    <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Logout</button>
+    </form>
 </nav>
 
 
 
 
+<div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Checkings</p>
+                    <h5 class="font-weight-bolder mb-0">
+                      $53,000
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+          </div>  
+        </div>  
+      </div>  
+</div>  
 
+                      
+<div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Savings</p>
+                    <h5 class="font-weight-bolder mb-0">
+                      $101,509
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+                      
+<div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Credit Card Balance</p>
+                    <h5 class="font-weight-bolder mb-0">
+                      $3,012
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Loan Balance</p>
+                    <h5 class="font-weight-bolder mb-0">
+                      $3,503
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 
