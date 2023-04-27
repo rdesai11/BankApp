@@ -18,8 +18,11 @@ if(!isset($_SESSION['User'])){
 <body>
     <div class="form">
         <p>Hey, <?php echo $_SESSION['User']; ?>!</p>
-        <p>You are now in customer dashboard page.</p>
+        <p>You are now signed in.</p>
+        <p><a href="CustomerViewAccounts.php">View Accounts</a></p>
         <p><a href="BankLogoutAction.php">Logout</a></p>
     </div>
+    
+    
 </body>
 </html>
