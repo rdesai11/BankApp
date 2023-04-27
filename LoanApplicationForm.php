@@ -213,7 +213,7 @@ if(!isset($_SESSION['User'])){
   </head>
   <body>
     <div class="testbox">
-    <form>
+     <form class="d-flex" action="LoanSubmitConfirmation.php" method="post">
       <div class="banner">
         <h1>Loan Application</h1>
       </div>
@@ -274,7 +274,7 @@ if(!isset($_SESSION['User'])){
       </div>
       </fieldset>
       <div class="btn-block">
-      <button type="order" href="/">Submit</button>
+      <button type="submit" href="LoanSubmitConfirmation.php">Submit</button>
       </div>
     </form>
     </div>
