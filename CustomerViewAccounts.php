@@ -46,7 +46,9 @@ if(!isset($_SESSION['User'])){
           <a class="nav-link" href="#">Deposit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Apply Loan</a>
+              <form class="d-flex" action="LoanApplicationForm.php" method="post">
+              <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Apply Loan</button>
+              </form>   
         </li>
       </ul>
     </div>
