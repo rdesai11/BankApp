@@ -142,3 +142,14 @@ if(!isset($_SESSION['User'])){
       </div>
 </div>
 
+
+
+
+<style>
+    html, body {
+        background:  #1c87c9;
+    }
+    .card {
+        background-image: linear-gradient(to right top, #00ff28, #00e5b8, #00c0ff, #008dff, #6200ff);
+    }
+</style>
