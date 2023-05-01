@@ -43,7 +43,8 @@ include 'header.php';
       <div class="col-lg-8">
         <div class="card-body py-5 px-md-5">
 
-            <form method = "post" action="CustomerLogin.php">
+            <form method = "Post" action="CustomerLogin.php">
+                
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="text" id="user" name="User" class="form-control" />
@@ -65,11 +66,6 @@ include 'header.php';
                   <label class="form-check-label" for="form2Example31"> Remember me </label>
                 </div>-->
               </div>
-
-<!--              <div class="col">
-                 Simple link 
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot password?</a>
-              </div>-->
             </div>
 
             <!-- Submit button -->
@@ -82,4 +78,14 @@ include 'header.php';
     </div>
   </div>
 </section>
+
+
 <!-- Section: Design Block -->
+<style>
+    body {
+        background-color: #228cdc
+    }
+    .card {
+        background: #228cdc;
+    }
+</style>

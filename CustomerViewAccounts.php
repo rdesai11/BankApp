@@ -20,9 +20,9 @@ if(!isset($_SESSION['User'])){
 
 
 <!--  Navbar --> 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-blue">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">XYZ Bank</a>
+    <a class="navbar-brand" href="CustomerViewAccounts.php">XYZ Bank</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -147,9 +147,10 @@ if(!isset($_SESSION['User'])){
 
 <style>
     html, body {
-        background:  #1c87c9;
+        background: #dcebfb ;
     }
     .card {
-        background-image: linear-gradient(to right top, #00ff28, #00e5b8, #00c0ff, #008dff, #6200ff);
+        background: #1DA1F2;
     }
+    
 </style>

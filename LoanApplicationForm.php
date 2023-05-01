@@ -211,7 +211,46 @@ if(!isset($_SESSION['User'])){
       }
     </style>
   </head>
+  
+  
+  
+  
   <body>
+      
+  <?php
+    require('dbconnect.php');
+
+        if (isset($_REQUEST['User'])) {
+
+        $amount = $_REQUEST['LoanAmount'];
+        $amount = mysqli_real_escape_string($conn, $LoanAmount);
+        
+        $loanNum = $_REQUEST['LoanNum'];
+        $loanNum = mysqli_real_escape_string($conn, $LoanNum);
+        
+        $loanType = stripslashes($_REQUEST['LoanType']);
+        $loanType = mysqli_real_escape_string($conn, $LoanType);
+                
+        
+          $query    = "INSERT INTO `loanapp` (LoanAppID, LoanNum, LoanAmount, LoanType, CustomerID) 
+                       VALUES (NULL, '$loanNum', '$amount', '$loanType', $_REQUEST[User])";
+//        $query    = "INSERT into `customer` (CustomerID, Name, User, Pass, Email, Phone, Address, GovIDNum)
+//                     VALUES ('$Name', '$User', '" . md5($Pass) . "', '$Email', '$Phone', '$Address', '$GovIDNum')";
+        $result   = mysqli_query($conn, $query);
+        if ($result) {
+            echo "<div class='form'>
+                  <h3>You are registered successfully.</h3><br/>
+                  <p class='link'>Click here to <a href='CustomerSignIn.php'>Login</a></p>
+                  </div>";
+        } else {
+            echo "<div class='form'>
+                  <h3>Required fields are missing.</h3><br/>
+                  <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
+                  </div>";
+        }
+    }
+  
+  ?>
     <div class="testbox">
      <form class="d-flex" action="LoanSubmitConfirmation.php" method="post">
       <div class="banner">
@@ -235,7 +274,7 @@ if(!isset($_SESSION['User'])){
           </div>
           <div class="item">
             <label for="phone">Phone Number</label>
-            <input id="phone" type="tel"   name="phone"/>
+            <input id="loanNum" type="number"   name="phone"/>
           </div>
           <div class="item">
             <label for="saddress">Street Address</label>
@@ -270,7 +309,7 @@ if(!isset($_SESSION['User'])){
       </div>
       <div class="item">
       <label for="donation">Additional Comments</label>
-      <textarea id="donation" rows="3"></textarea>
+      <textarea id="loanType" rows="3"></textarea>
       </div>
       </fieldset>
       <div class="btn-block">
