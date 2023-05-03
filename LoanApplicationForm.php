@@ -262,35 +262,35 @@ if(!isset($_SESSION['User'])){
         <div class="colums">
           <div class="item">
             <label for="fname">First Name<span>*</span></label>
-            <input id="fname" type="text" name="fname" />
+            <input id="fname" type="text" name="fname" required />
           </div>
           <div class="item">
             <label for="lname"> Last Name<span>*</span></label>
-            <input id="lname" type="text" name="lname" />
+            <input id="lname" type="text" name="lname" required />
           </div>
           <div class="item">
             <label for="address">Email Address<span>*</span></label>
-            <input id="address" type="text"   name="address" />
+            <input id="address" type="text"   name="address" required />
           </div>
           <div class="item">
-            <label for="phone">Phone Number</label>
-            <input id="loanNum" type="number"   name="phone"/>
+            <label for="phone">Phone Number<span>*</span></label>
+            <input id="loanNum" type="number"   name="phone" required />
           </div>
           <div class="item">
-            <label for="saddress">Street Address</label>
-            <input id="saddress" type="text"   name="city" />
+            <label for="saddress">Street Address<span>*</span></label>
+            <input id="saddress" type="text"   name="city" required />
           </div>
           <div class="item">
-            <label for="city">City</label>
-            <input id="city" type="text"   name="city" />
+            <label for="city">City<span>*</span></label>
+            <input id="city" type="text"   name="city" required />
           </div>
           <div class="item">
-            <label for="zip">Zip/Postal Code</label>
-            <input id="zip" type="text"   name="zip" />
+            <label for="zip">Zip/Postal Code<span>*</span></label>
+            <input id="zip" type="text"   name="zip" required />
           </div>
           <div class="item">
-            <label for="country">Country</label>
-            <input id="country" type="text"   name="text" />
+            <label for="country">Country<span>*</span></label>
+            <input id="country" type="text"   name="text" required />
           </div>
       </fieldset>
       <br/>
@@ -305,7 +305,7 @@ if(!isset($_SESSION['User'])){
       </div>
       <div class="item">
       <label for="amount">Loan Amount<span>*</span></label>
-      <input id="amount" type="number"   name="amount" />
+      <input id="amount" type="number"   name="amount" required />
       </div>
       <div class="item">
       <label for="donation">Additional Comments</label>
