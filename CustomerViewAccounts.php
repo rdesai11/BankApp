@@ -45,11 +45,6 @@ if(!isset($_SESSION['User'])){
             </form>  
         </li>
         <li class="nav-item">
-            <form class="d-flex" action="DepositForm.php" method="post">
-            <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Deposit</button>
-            </form>  
-        </li>
-        <li class="nav-item">
             <form class="d-flex" action="LoanApplicationForm.php" method="post">
             <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Apply Loan</button>
             </form>   
@@ -57,6 +52,9 @@ if(!isset($_SESSION['User'])){
       </ul>
     </div>
   </div>
+    <form class="d-flex" action="ContactUs.php" method="post">
+        <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Help</button>
+    </form>
     <form class="d-flex" action="BankLogoutAction.php" method="post">
     <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Logout</button>
     </form>
