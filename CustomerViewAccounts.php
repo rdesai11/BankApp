@@ -40,15 +40,19 @@ if(!isset($_SESSION['User'])){
           <a class="nav-link active" aria-current="page" href="#">Accounts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Transfer</a>
+            <form class="d-flex" action="TransferForm.php" method="post">
+            <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Transfer</button>
+            </form>  
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Deposit</a>
+            <form class="d-flex" action="DepositForm.php" method="post">
+            <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Deposit</button>
+            </form>  
         </li>
         <li class="nav-item">
-              <form class="d-flex" action="LoanApplicationForm.php" method="post">
-              <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Apply Loan</button>
-              </form>   
+            <form class="d-flex" action="LoanApplicationForm.php" method="post">
+            <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Apply Loan</button>
+            </form>   
         </li>
       </ul>
     </div>

@@ -70,8 +70,11 @@ include 'header.php';
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
           </form>
+          <form method ="Post" action="ForgotPassCustomer.php">
+            <button type="submit" class="btn btn-primary btn-block mb-4">Forgot Password</button>
+          </form>
+            
 
         </div>
       </div>
@@ -83,9 +86,9 @@ include 'header.php';
 <!-- Section: Design Block -->
 <style>
     body {
-        background-color: #228cdc
+        background-color: #80dfff
     }
     .card {
-        background: #228cdc;
+        background: #80dfff;
     }
 </style>
