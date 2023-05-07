@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col-md-9 col-lg-7 col-xl-5 mx-auto text-center">
         <h4 class="mb-4">Contact us</h4>
-        <form>
+        <form method="post" action="ContactUsConfirmation.php">
           <div class="row">
             <div class="col-md-6">
               <div class="form-outline mb-4">
@@ -41,7 +41,7 @@
             <textarea class="form-control" id="contactBlockMessage4" rows="4"></textarea>
             <label class="form-label" for="contactBlockMessage4">Message</label>
           </div>
-          <button type="button" class="btn btn-dark btn-block">Send message</button>
+          <button type="submit" class="btn btn-dark btn-block">Send message</button>
         </form>
       </div>
     </div>

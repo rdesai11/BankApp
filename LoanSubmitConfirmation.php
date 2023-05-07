@@ -12,7 +12,7 @@ if(!isset($_SESSION['User'])){
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Dashboard - Client area</title>
+    <title>Loan Confirmation</title>
     <link rel="stylesheet" href="style.css" />
 
 </head>
