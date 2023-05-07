@@ -1,42 +1,30 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    <title>BankHome</title>
+    <meta charset="utf-8">
+    <title>Reset Email Confirmation</title>
+    <link rel="stylesheet" href="style.css" />
+
 </head>
-
-
-<div class="card text-center" style="width: 300px;">
-    <div class="card-header h5 text-white bg-primary">Password Reset</div>
-    <div class="card-body px-5">
-        <p class="card-text py-2">
-            Enter your email address and we'll send you an email with instructions to reset your password.
-        </p>
-        <div class="form-outline">
-            <input type="text" id="typeEmail" class="form-control my-3" required />
-        </div>
-        <a href="ResetPwConfirmation.php" class="btn btn-primary w-100">Reset password</a>
-        <div class="d-flex justify-content-between mt-4">
-            <a class="" href="CustomerSignIn.php">Login</a>
-            <a class="" href="Registration.php">Register</a>
-        </div>
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
     </div>
-</div>
+    <div class="form">
+        <p>Hello valued customer!</p>
+        <p>We have sent an email with instructions on resetting your password!</p>
+        <p><a href="CustomerSignIn.php">Back to Login</a></p>
+    </div>
+    
+    
+</body>
+</html>
 
 
 <style>
-.card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
- body {
+    body {
     margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     overflow: auto;
