@@ -106,8 +106,3 @@
             </div>
         </div>
     </nav>
-    
- 
-    <div>
-        <p> hello </p>
-    </div>
