@@ -12,8 +12,9 @@ if(!isset($_SESSION['User'])){
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Dashboard - Client area</title>
+    <title>Loan Confirmation</title>
     <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
     <div>
@@ -22,9 +23,9 @@ if(!isset($_SESSION['User'])){
         <div class="wave"></div>
     </div>
     <div class="form">
-        <p>Hey, <?php echo $_SESSION['User']; ?>!</p>
-        <p>You are now signed in.</p>
-        <p><a href="CustomerViewAccounts.php">View Accounts</a></p>
+        <p>Hello, <?php echo $_SESSION['User']; ?>!</p>
+        <p>We received your application and will reach out soon!</p>
+        <p><a href="CustomerViewAccounts.php">Back to Accounts</a></p>
         <p><a href="BankLogoutAction.php">Logout</a></p>
     </div>
     

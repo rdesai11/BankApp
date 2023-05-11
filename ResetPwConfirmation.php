@@ -1,19 +1,10 @@
-<?php
-session_start();
-
-if(!isset($_SESSION['User'])){
-   header("Location:CustomerSignIn.php");
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Dashboard - Client area</title>
+    <title>Reset Email Confirmation</title>
     <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
     <div>
@@ -22,10 +13,9 @@ if(!isset($_SESSION['User'])){
         <div class="wave"></div>
     </div>
     <div class="form">
-        <p>Hey, <?php echo $_SESSION['User']; ?>!</p>
-        <p>You are now signed in.</p>
-        <p><a href="CustomerViewAccounts.php">View Accounts</a></p>
-        <p><a href="BankLogoutAction.php">Logout</a></p>
+        <p>Hello valued customer!</p>
+        <p>We have sent an email with instructions on resetting your password!</p>
+        <p><a href="CustomerSignIn.php">Back to Login</a></p>
     </div>
     
     
