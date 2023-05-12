@@ -37,11 +37,11 @@ if(!isset($_SESSION['User'])){
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Accounts</a>
+          <a class="nav-link active" aria-current="page" href="#">Checking</a>
         </li>
         <li class="nav-item">
-            <form class="d-flex" action="TransferForm.php" method="post">
-            <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Transfer</button>
+            <form class="d-flex" action="ApplySavingsForm.php" method="post">
+            <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Savings</button>
             </form>  
         </li>
         <li class="nav-item">
@@ -73,7 +73,20 @@ if(!isset($_SESSION['User'])){
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Checkings</p>
                     <h5 class="font-weight-bolder mb-0">
-                      $53,000
+                      <?php
+    // Retrieve the customer ID from the session variable
+     $cust_id = $_SESSION['CustomerID'];                
+    // Query the database to get the user's savings account balance
+    $sql = "SELECT Balance FROM checkingaccount WHERE CustomerID = $cust_id";
+    $result = mysqli_query($conn, $sql);
+    
+    $row = mysqli_fetch_assoc($result);
+    $balance = $row['Balance'];
+        
+        // Display the balance to the user
+        echo "Balance is: $ $balance";
+
+    ?>
                   </div>  
                 </div>  
               </div>  
@@ -94,7 +107,20 @@ if(!isset($_SESSION['User'])){
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Savings</p>
                     <h5 class="font-weight-bolder mb-0">
-                      $101,509
+                        <?php
+    // Retrieve the customer ID from the session variable
+     $cust_id = $_SESSION['CustomerID'];                
+    // Query the database to get the user's savings account balance
+    $sql = "SELECT Balance FROM savingsaccount WHERE CustomerID = $cust_id";
+    $result = mysqli_query($conn, $sql);
+    
+    $row = mysqli_fetch_assoc($result);
+    $balance = $row['Balance'];
+        
+        // Display the balance to the user
+        echo "Balance is: $ $balance";
+
+    ?>
                   </div>
                 </div>
               </div>
@@ -114,7 +140,20 @@ if(!isset($_SESSION['User'])){
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Credit Card Balance</p>
                     <h5 class="font-weight-bolder mb-0">
-                      $3,012
+                      <?php
+    // Retrieve the customer ID from the session variable
+     $cust_id = $_SESSION['CustomerID'];                
+    // Query the database to get the user's savings account balance
+    $sql = "SELECT Balance FROM creditcard WHERE CustomerID = $cust_id";
+    $result = mysqli_query($conn, $sql);
+    
+    $row = mysqli_fetch_assoc($result);
+    $balance = $row['Balance'];
+        
+        // Display the balance to the user
+        echo "Balance is: $ $balance";
+
+    ?>
                   </div>
                 </div>
               </div>
@@ -134,7 +173,20 @@ if(!isset($_SESSION['User'])){
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Loan Balance</p>
                     <h5 class="font-weight-bolder mb-0">
-                      $3,503
+                      <?php
+    // Retrieve the customer ID from the session variable
+     $cust_id = $_SESSION['CustomerID'];                
+    // Query the database to get the user's savings account balance
+    $sql = "SELECT LoanAmount FROM loanapp WHERE CustomerID = $cust_id";
+    $result = mysqli_query($conn, $sql);
+    
+    $row = mysqli_fetch_assoc($result);
+    $balance = $row['LoanAmount'];
+        
+        // Display the balance to the user
+        echo "Balance is: $ $balance";
+
+    ?>
                   </div>
                 </div>
               </div>

@@ -5,6 +5,7 @@ session_start();
 $uname = $_POST['User'];
 $pass = $_POST['Pass'];
 
+
 if (isset($_POST['User']) && isset($_POST['Pass'])) {
 
     $sql = "SELECT * FROM Customer WHERE User='$uname' AND Pass='$pass'";
@@ -17,7 +18,7 @@ if (isset($_POST['User']) && isset($_POST['Pass'])) {
             echo "Logged in!";
             $_SESSION['User'] = $row['User'];
             $_SESSION['Name'] = $row['Name'];
-            $_SESSION['CustomerID'] = $row['ID'];
+            $_SESSION['CustomerID'] = $row['CustomerID'];
             header("Location: CustomerHome.php?");
             exit();
         } else {
