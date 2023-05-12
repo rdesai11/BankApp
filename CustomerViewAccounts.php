@@ -210,8 +210,16 @@ if(!isset($_SESSION['User'])){
     html, body {
         background: #dcebfb ;
     }
+    
     .card {
         background: #1DA1F2;
+        /* Transition for smooth animation */
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        /* Box shadow to create a lighting effect */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     }
     
 </style>
