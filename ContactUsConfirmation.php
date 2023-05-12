@@ -7,7 +7,6 @@ if(!isset($_SESSION['User'])){
 
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>

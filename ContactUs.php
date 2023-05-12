@@ -1,3 +1,12 @@
+<?php
+require 'DBConnect.php';
+session_start();
+
+if(!isset($_SESSION['User'])){
+   header("Location:CustomerSignIn.php");
+}
+?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -9,36 +18,33 @@
     <title>Contact Us</title>
 </head>
 
-
-<!-- Container for demo purpose -->
-<div class="container my-5">
-
 	<!-- Section: Design block -->
+ <div class="container my-5">
   <section class="mb-10">
     <div class="row">
       <div class="col-md-9 col-lg-7 col-xl-5 mx-auto text-center">
         <h4 class="mb-4">Contact us</h4>
-        <form method="post" action="ContactUsConfirmation.php">
+        <form method="post" action="contact_form_handler.php">
           <div class="row">
             <div class="col-md-6">
               <div class="form-outline mb-4">
-                <input type="text" id="contactBlockName1" class="form-control" />
+                <input type="text" id="contactBlockName1" class="form-control" name="name" />
                 <label class="form-label" for="contactBlockName1">Name</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-outline mb-4">
-                <input type="email" id="contactBlockEmail2" class="form-control" />
+                <input type="email" id="contactBlockEmail2" class="form-control" name="email" />
                 <label class="form-label" for="contactBlockEmail2">Email</label>
               </div>
             </div>
           </div>
           <div class="form-outline mb-4">
-            <input type="tel" id="contactBlockPhone3" class="form-control" />
+            <input type="tel" id="contactBlockPhone3" class="form-control" name="phone" />
             <label class="form-label" for="contactBlockPhone3">Phone (optional)</label>
           </div>
           <div class="form-outline mb-4">
-            <textarea class="form-control" id="contactBlockMessage4" rows="4"></textarea>
+            <textarea class="form-control" id="contactBlockMessage4" rows="4" name="message"></textarea>
             <label class="form-label" for="contactBlockMessage4">Message</label>
           </div>
           <button type="submit" class="btn btn-dark btn-block">Send message</button>
@@ -46,10 +52,8 @@
       </div>
     </div>
   </section>
-  <!-- Section: Design block -->
-  
 </div>
-<!-- Container for demo purpose -->
+
 
 
 <style>
