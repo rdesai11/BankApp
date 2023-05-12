@@ -47,6 +47,11 @@ if(!isset($_SESSION['User'])){
             </form>  
         </li>
         <li class="nav-item">
+            <form class="d-flex" action="CreditCardInfo.php" method="post">
+            <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Credit</button>
+            </form>   
+        </li>
+        <li class="nav-item">
             <form class="d-flex" action="ViewLoanInfo.php" method="post">
             <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Loan</button>
             </form>   

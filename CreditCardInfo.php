@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Loan Accounts</title>
+    <title>Credit Account</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -14,13 +14,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>Loan Accounts</h1>
+        <h1>Credit Card Info</h1>
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Loan Number</th>
-                    <th>Current Balance</th>
-                    <th>Type of Loan</th>
+                    <th>Credit Card Number</th>
+                    <th>CVV</th>
+                    <th>Expiration Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,7 +31,7 @@
                 $cust_id = $_SESSION['CustomerID'];
 
                 // Query the database to get the account information
-                $sql = "SELECT LoanNum, LoanAmount, LoanType FROM loanapp WHERE CustomerID = $cust_id";
+                $sql = "SELECT CreditCardNum, CVV, ExpDate FROM creditcard WHERE CustomerID = $cust_id";
                 $result = mysqli_query($conn, $sql);
 
                 // Check if the query was successful
@@ -39,13 +39,13 @@
                     // Loop through the query results and display each row
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
-                        echo "<td>" . $row['LoanNum'] . "</td>";
-                        echo "<td>$" . number_format($row['LoanAmount']) . "</td>";
-                        echo "<td>" . $row['LoanType'] . "</td>";
+                        echo "<td>" . $row['CreditCardNum'] . "</td>";
+                        echo "<td>" . $row['CVV'] . "</td>";
+                        echo "<td>" . date('m/y', strtotime($row['ExpDate'])) . "</td>";
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='3'>No savings account found.</td></tr>";
+                    echo "<tr><td colspan='3'>No credit card account found.</td></tr>";
                 }
 
                 // Close the database connection

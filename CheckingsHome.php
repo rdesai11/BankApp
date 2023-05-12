@@ -39,7 +39,7 @@
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
                         echo "<td>" . $row['AccNum'] . "</td>";
-                        echo "<td>$" . $row['Balance'] . "</td>";
+                        echo "<td>$" . number_format($row['Balance']) . "</td>";
                         echo "</tr>";
                     }
                 } else {
