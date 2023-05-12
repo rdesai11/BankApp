@@ -37,16 +37,18 @@ if(!isset($_SESSION['User'])){
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Checking</a>
+            <form class="d-flex" action="CheckingsHome.php" method="post">
+            <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Checking</button>
+            </form>  
         </li>
         <li class="nav-item">
-            <form class="d-flex" action="ApplySavingsForm.php" method="post">
+            <form class="d-flex" action="SavingsHome.php" method="post">
             <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Savings</button>
             </form>  
         </li>
         <li class="nav-item">
-            <form class="d-flex" action="LoanApplicationForm.php" method="post">
-            <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Apply Loan</button>
+            <form class="d-flex" action="ViewLoanInfo.php" method="post">
+            <button type="submit" class="btn btn-tertiary" data-mdb-ripple-color="light">Loan</button>
             </form>   
         </li>
       </ul>
